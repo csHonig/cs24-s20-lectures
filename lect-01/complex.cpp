@@ -1,10 +1,11 @@
 // Basics of Object Oriented Programming
 // Designing classes
-// - simple barebones class, add more sophistication
+// we'll start with a barebones class, add more sophistication later
 // In CS16, structs: Define custom data types
 // Example: New datatype to represent complex numbers
 // a + i*b  a: real part  b: imaginary part
 // C++ classes: structs + member functions + information hiding
+
 
 #include <iostream>
 using namespace std;
@@ -43,3 +44,5 @@ int main(){
    c1.print();
    return 0;
 }
+// g++ -c -> object file: machine code version of complex.cpp
+// linking stage: combines all the object files into an excecutable
