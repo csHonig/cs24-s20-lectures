@@ -1,9 +1,10 @@
 // Basics of Object Oriented Programming
-// Designing classes
-// we'll start with a barebones class, add more sophistication later
-// In CS16, structs: Define custom data types
-// Example: New datatype to represent complex numbers
-// a + i*b  a: real part  b: imaginary part
+// Classes: Bundle data and functions that operate on that data
+// Object: Instance of a class 
+// Think of classes as an extension of structs (from CS16)
+// structs: Define custom data types
+// Example: Datatype to represent complex numbers (we could define this as a struct)
+// In general a complex number is of the form: a + i*b, where  a: real part  b: imaginary part
 // C++ classes: structs + member functions + information hiding
 
 
