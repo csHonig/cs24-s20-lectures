@@ -10,24 +10,26 @@
 #include <iostream>
 using namespace std;
 class Complex{
-   public: // everything below this line is accessible outside the class
-      //member functions
+   public: 
+      // Member functions and variables in the public region can be accessed
+      // by any code. 
       // getters (accessors): return value of member variables
-      double getReal() const; // getReal() cannot modify any of the member variables
-                              // if it tries to modify the member variables, 
-                              // results in a compiler error
+      double getReal() const; // the const keyword at the end means that
+                              // getReal() cannot modify any of the member variables.
+                              // Trying to modify the member variables, 
+                              // will result in a compiler error
       double getImaginary() const;
       void print() const;
       Complex getConjugate() const ; // gets the conjugate value of the complex number
 
-      // setters (mutators)
+      // setters (mutators): used to modify the member variables
       void setReal(double a);
       void setImaginary(double b);
-      // conjugate of a+ib  is a - ib
-      void conjugate(); // apply the conjugate operation
+      void conjugate(); // apply the conjugate operation, conjugate of a+ib  is a - ib
       
    private:
-      //member variables
+      // member variables, these are typically private which means 
+      // they can only be accessed by member functions of the class
       double real; 
       double imag;
 };
