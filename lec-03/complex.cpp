@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-
-// Example: Datatype to represent complex numbers (we could define this as a struct)
+// class Complex: Datatype to represent complex numbers (we could define this as a struct)
 // In general a complex number is of the form: a + i*b, where  a: real part  b: imaginary part
 
 // Big Four: Special member functions of a class. 
@@ -25,8 +24,13 @@ class Complex{
       // Member functions and variables in the public region can be accessed by any code. 
       // getters (accessors): return value of member variables
       // Complex(); // Default constructor: there is no return type
-      Complex(double re = 0 , double im = 0 ); // parametrized constructor with default values
+      Complex(double re = 0 , double im = 0 );
+      
+      // parametrized constructor with default values
+      // Copy constructor
+      Complex(const Complex& c);
       ~Complex(); //destructor
+
       double getReal() const; // the const keyword at the end means that
                               // getReal() cannot modify any of the member variables.
                               // Trying to modify the member variables, 
@@ -40,13 +44,47 @@ class Complex{
       void setReal(double a);
       void setImaginary(double b);
       void conjugate(); // apply the conjugate operation, conjugate of a+ib  is a - ib
-      
+      // Define the assignment operator as a member function
+      Complex& operator=(const Complex& c);
+      // c1 = c2; -> c1.operator=(c2)
    private:
       // member variables, these are typically private which means 
       // they can only be accessed by member functions of the class
       double real; 
       double imag;
 };
+
+Complex& Complex::operator=(const Complex& c){
+  /* setReal(c.real);
+   setImaginary(c.imag);*/
+   real = c.real;
+   imag = c.imag;
+   return *this; // this is a pointer to the implicit object
+                // "this" is the name of a pointer to c1
+}
+// c1 = c4;  c1.operator=(c4);
+// c1 = c2 = c3;
+// x = y;
+// if(x){
+
+//}
+
+// How much are you feeling engaged with the lecture?
+// A. Not all all
+// B. Somewhat
+// C. Mosty
+// D. Very engaged.
+
+// Complex c1 = c4; // calls the copy constructor
+// Complex c1 {c4};  // copy constructor
+// c1 = c4; // copy assignment, c1 is the implicit object
+// Complex& c1 = c4; // This does not call the copy constructor
+                     // Reference semantics 
+                     // Value semantics: call to copy constructor
+                     // or call to copy assignment
+
+
+// c1 = c4
 /*
 Complex::Complex(){
  // the default constructor provided by C++ is an empty function but we could override it.
@@ -57,14 +95,25 @@ Complex::Complex(){
 Complex::~Complex(){
    // destructor is an empty routine by default but you can overide it
    // by writing your own
-   imag = 0;
-   real = 0;
+   // cleaning up any heap that was allocated by the class
 }
-Complex::Complex(double re, double im){
+//Initializer list
+// If the member varible were const, then we must initialize
+// them using the  initializer list
+Complex::Complex(double re, double im): real{re}, imag{im}{
    // paramerized constructor
-   real = re;
-   imag = im;
 }
+// This is the same implementation as the the C++ default
+// copy constructor
+Complex::Complex(const Complex& c){
+   real = c.real; // Can access private member variables
+   imag = c.imag;
+}
+
+//Complex c4 {c1} // Complex c = c1
+// Parameters of type Complex are passed by value
+// by calling the copy constructor
+
 void Complex::print() const{ 
    // :: scope operator, Complex::print Complex class's print function
    if(imag > 0){
@@ -125,6 +174,31 @@ int main(){
    p->setImaginary(6);
    p->print();
    delete p; // object is removed from the heap
+
+   // Copy constructor: 
+   Complex c4 {c1}; // Default version copies the member variables of c1 into c4
+   // Shallow copy 
+   cout<<"Print c1 and then c4"<<endl;
+   c1.print();
+   c4.print();
+   // Copy constructor is called any time we do a pass by value
+
+   Complex* pc = new Complex{c1}; //Calls the copy constructor
+
+   // Copy assignment
+   c2 = c1; // Function call to copy assignment
+            // c1's member variables are copied into c2
+            // = operator is overloaded by default
+   c2.print();
+
+   int w = 10, y = 20;
+   y = w + y;
+   // c3 = c1 + c2; // + operator can be redefined for Complex type
+   //bool z = (c1 == c2);
+
+   c1 = c2 = c3;
+
+
    return 0;
 }
 // g++ -c -> object file: machine code version of complex.cpp
