@@ -124,23 +124,9 @@ void Complex::print() const{
    }
 }
 void Complex::setReal(double a){
-   // Q1: How long does 'a' exist in memory
-   // A: As long as main is running
-   // B: As log as setReal is running // Correct
-   // C: Forever
-   // a is not a member variable, it is not part of the object
-   // a is a local variable of setReal
 
    // object is a implicit c1.setReal 
    real = a;
-   // Q2: How long foes 'real' exist in memory
-   // A: As long as the the object containing real exists in memory // Correct
-   // B: As log as setReal is running
-   // C: Forever
-
-   // int x, y; // local variables, are removed from the stack
-             // after setReal returns.
-
 }
 
 void Complex::setImaginary(double a){
@@ -160,7 +146,8 @@ int main(){
    // Complex c3(2, 3); // parameterized constructor , older C++ notation
    Complex c3 {2, 3};  // C++ 11 notation for initializing a complex object
    int arr[4] { 1, 2, 3, 4}; // C++ 11 notation for initializng an int array
-   // set c1: 2 + 3i, we will use a better way soon!
+   // set c1: 2 + 3i, we will use a better way soon! 
+   // (we did this by using parameterized constructor)
 
    c1.setReal(2); // calling a member function on c1
                   // real member variable is on the stack
