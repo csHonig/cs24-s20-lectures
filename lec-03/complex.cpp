@@ -69,7 +69,7 @@ Complex& Complex::operator=(const Complex& c){
 
 //}
 
-// How much are you feeling engaged with the lecture?
+// How engaged are you feeling in lecture?
 // A. Not all all
 // B. Somewhat
 // C. Mosty
