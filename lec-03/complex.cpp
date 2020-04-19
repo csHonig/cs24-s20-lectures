@@ -102,6 +102,8 @@ Complex::~Complex(){
 // them using the  initializer list
 Complex::Complex(double re, double im): real{re}, imag{im}{
    // paramerized constructor
+   cout<<"Calls the constructor";
+   print();
 }
 // This is the same implementation as the the C++ default
 // copy constructor
@@ -184,7 +186,6 @@ int main(){
    //bool z = (c1 == c2);
 
    c1 = c2 = c3;
-
 
    return 0;
 }
