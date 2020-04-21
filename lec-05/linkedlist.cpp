@@ -6,7 +6,7 @@ class LinkedList{
    public:
       LinkedList():head{0}, tail{0}{};
       ~LinkedList(){
-         cout<<"Destruction"<<endl;
+         cout<<"Inside destructor"<<endl;
          //Delete all nodes that were allocated heap
          clear();
          //iterate through nodes and delete each one
