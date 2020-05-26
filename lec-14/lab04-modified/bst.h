@@ -1,5 +1,5 @@
 // BST.h
-// Binary search tree header file for CS 24 lab
+// Modified version of lab04 starter code for demo purposes
 
 #ifndef BST_H
 #define BST_H

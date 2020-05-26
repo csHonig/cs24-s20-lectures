@@ -1,5 +1,5 @@
 // BST.h
-// Binary search tree header file for CS 24 lab
+// Modified version of lab04 starter code for demo purposes
 
 #ifndef BST_H
 #define BST_H
@@ -15,19 +15,8 @@ class BST {
     BST();                   // constructor
     ~BST();                  // destructor
     bool insert(int value);     // insert value; return false if duplicate
-    void printPreOrder() const; // prints tree data pre-order to cout
-
-    // 8 METHODS YOU MUST IMPLEMENT in BST.cpp:
-    void printInOrder() const;       // print tree data in-order to cout
-    void printPostOrder() const;     // print tree data post-order to cout
-    int sum() const;                 // sum of all values
-    int count() const;               // count of values
     bool contains(int value) const;  // true if value is in tree
-
-    // THESE ARE HARDER! DO THESE LAST
-    int getPredecessor(int value) const;       // returns the predecessor value of the given value or 0 if there is none
-    int getSuccessor(int value) const;         // returns the successor value of the given value or 0 if there is none
-    bool remove(int value);                    // deletes the Node containing the given value from the tree
+    void printPreOrder() const; // prints tree data pre-order to cout
 
  private:
 
@@ -46,14 +35,7 @@ class BST {
     void clear(Node *n); // for destructor
     bool insert(int value, Node *n); // note overloading names for simplicity
     void printPreOrder(Node *n) const;
-    void printInOrder(Node *n) const;
-    void printPostOrder(Node *n) const;
-    int sum(Node *n) const;
-    int count(Node *n) const;
-
-    // these should be used by getPredecessor and getSuccessor, and ONE of them should be used by remove
-    Node* getSuccessorNode(int value) const;   // returns the Node containing the successor of the given value
-    Node* getPredecessorNode(int value) const; // returns the Node containing the predecessor of the given value 
+    
 };
 
 #endif

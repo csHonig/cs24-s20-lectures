@@ -1,6 +1,5 @@
 // BST.cpp
-// Implements class BST
-// YOUR NAME(S), DATE
+// Modified version of lab04 starter code for demo purposes
 
 #include "bst.h"
 

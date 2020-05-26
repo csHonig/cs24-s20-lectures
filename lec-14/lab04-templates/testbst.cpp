@@ -1,5 +1,5 @@
-// testbst.cpp: modified for this lecture
-// Tests BST.cpp for CS 24 lab
+// testbst.cpp:
+// Modified version of lab04 starter code for demo purposes
 
 #include "bst.h"
 #include <iostream>
