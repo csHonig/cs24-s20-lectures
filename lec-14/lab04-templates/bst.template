@@ -1,4 +1,4 @@
-// bst.cpp
+// bst.template
 // Modified version of lab04 starter code for demo purposes
 
 #include <iostream>
@@ -88,7 +88,7 @@ void BST<T>::printPreOrder(Node *n) const {
 // Whenever you call this method from somewhere else, pass it
 // the root node as "n"
 template <class T>
-typename BST<T>::Node* BST<T>::getNodeFor(T value, Node* n) const{
+typename BST<T>::Node* BST<T>::getNodeFor(T value, typename BST<T>::Node* n) const{
     return NULL; // REPLACE THIS NON-SOLUTION
 }
 // warn the compiler that Node* is a data type,
