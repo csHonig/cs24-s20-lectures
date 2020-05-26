@@ -73,42 +73,6 @@ void BST::printPreOrder(Node *n) const {
     }
 }
 
-// print tree data in-order, with helper
-void BST::printInOrder() const {
-    printInOrder(root);
-}
-void BST::printInOrder(Node *n) const {
-    // IMPLEMENT HERE
-}
-
-// prints tree data post-order, with helper
-void BST::printPostOrder() const {
-    printPostOrder(root);
-}
-
-void BST::printPostOrder(Node *n) const {
-    // IMPLEMENT HERE
-}
-
-// return sum of values in tree
-int BST::sum() const {
-    return sum(root);
-}
-
-// recursive helper for sum
-int BST::sum(Node *n) const {
-    return 0; // REPLACE THIS NON-SOLUTION
-}
-
-// return count of values
-int BST::count() const {
-    return count(root);
-}
-
-// recursive helper for count
-int BST::count(Node *n) const {
-    return 0; // REPLACE THIS NON-SOLUTION
-}
 
 // IMPLEMENT THIS FIRST: returns the node for a given value or NULL if none exists
 // Parameters:
@@ -120,33 +84,3 @@ BST::Node* BST::getNodeFor(int value, Node* n) const{
     return NULL; // REPLACE THIS NON-SOLUTION
 }
 
-// returns true if value is in the tree; false if not
-bool BST::contains(int value) const {
-    return true; // REPLACE THIS NON-SOLUTION
-}
-
-// returns the Node containing the predecessor of the given value
-BST::Node* BST::getPredecessorNode(int value) const{
-    return NULL; // REPLACE THIS NON-SOLUTION
-}
-
-// returns the predecessor value of the given value or 0 if there is none
-int BST::getPredecessor(int value) const{
-    return 0; // REPLACE THIS NON-SOLUTION
-}
-
-// returns the Node containing the successor of the given value
-BST::Node* BST::getSuccessorNode(int value) const{
-    return NULL; // REPLACE THIS NON-SOLUTION
-}
-
-// returns the successor value of the given value or 0 if there is none
-int BST::getSuccessor(int value) const{
-    return 0; // REPLACE THIS NON-SOLUTION
-}
-
-// deletes the Node containing the given value from the tree
-// returns true if the node exist and was deleted or false if the node does not exist
-bool BST::remove(int value){
-    return false; // REPLACE THIS NON-SOLUTION
-}
